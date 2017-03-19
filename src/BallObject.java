@@ -1,0 +1,66 @@
+import java.awt.*;
+
+/**
+ * Write a description of class BallObject here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class BallObject
+{
+    // instance variables - replace the example below with your own
+    protected int currentXLocation;
+    protected int currentYLocation;
+    protected Color colour;
+    protected int radius;
+    protected Machine machine;
+
+    /**
+     * Constructor for objects of class BallObject
+     */
+    public BallObject()
+    {
+        // initialise instance variables
+        
+    }
+    
+    /**
+     * return the horizontal position of this object
+     */
+    public int getXPosition()
+    {
+        return currentXLocation;
+    }
+    
+    /**
+     * return the vertical position of this object
+     */
+    public int getYPosition()
+    {
+        return currentYLocation;
+    }
+    
+    /**
+     * return the radius of this object
+     */
+    public int getRadius()
+    {
+        return radius;
+    }
+    
+    /**
+     * return the diameter of this object
+     */
+    public int getDiameter()
+    {
+        return 2*radius;
+    }
+    
+    /**
+     * return the colour of this object
+     */
+    public Color getColor()
+    {
+        return colour;
+    }    
+}

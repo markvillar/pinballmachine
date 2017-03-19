@@ -88,6 +88,30 @@ public class Machine
     }
     
     /**
+     * Return the edge of the right-hand wall
+     */
+    public int getRightWall()
+    {
+        return rightEdge - 10;
+    }
+    
+    /**
+     * Return the edge of the top wall
+     */
+    public int getToptWall()
+    {
+        return topEdge + 10;
+    }
+    
+    /**
+     * Return the edge of the bottom wall
+     */
+    public int getBottomWall()
+    {
+        return bottomEdge - 10;
+    }
+    
+    /**
      * Introduces a small delay in ball movement, for smooth running
      */
     

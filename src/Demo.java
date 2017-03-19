@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Class to demonstrate functionality of the Pinball machine
@@ -9,6 +10,7 @@ import java.awt.*;
 public class Demo
 {
     private Machine machine;
+    public ArrayList<PinballObject> pinballObjects;
 
     /**
      * Constructor for objects of class Demo
@@ -16,6 +18,7 @@ public class Demo
     public Demo()
     {
         machine = new Machine();
+        pinballObjects = new ArrayList<PinballObject>();
     }
 
     /**
@@ -26,18 +29,18 @@ public class Demo
         // sample demo
         machine.resetMachine();
         
-        PinballObject obj1 = new PinballObject(50, 200, -5, 3, Color.RED, 10, machine);
-        PinballObject obj2 = new PinballObject(100, 300, 1, 2, Color.BLUE, 55, machine);
-        PinballObject obj3 = new PinballObject(450, 125, -1, -1, Color.YELLOW, 40, machine);
-        PinballObject obj4 = new PinballObject(100, 200, 2, -2, Color.MAGENTA, 25, machine);
+        PinballObject pinballObj1 = new PinballObject(50, 200, -5, 3, Color.RED, 10, machine, pinballObjects);
+        PinballObject pinballObj2 = new PinballObject(100, 300, 1, 2, Color.BLUE, 55, machine, pinballObjects);
+        PinballObject pinballObj3 = new PinballObject(450, 125, -1, -1, Color.YELLOW, 40, machine, pinballObjects);
+        PinballObject pinballObj4 = new PinballObject(100, 200, 2, -2, Color.MAGENTA, 25, machine, pinballObjects);
         
-        for(int i = 0; i <= 60; i++)
+        for(int i = 0; i <= 260; i++)
         {
             machine.pauseMachine();           // small delay
-            obj1.move();
-            obj2.move();
-            obj3.move();
-            obj4.move();
+            pinballObj1.move();
+            pinballObj2.move();
+            pinballObj3.move();
+            pinballObj4.move();
         }
     }
 }
