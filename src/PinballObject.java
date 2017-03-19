@@ -121,7 +121,19 @@ public class PinballObject extends BallObject
                 //Collision
                 if (distance < (radius + other.getRadius()))
                 {
-                    
+                	if (speedXTravel < 0) {
+                		speedXTravel = -speedXTravel;
+                		}
+                	else if (speedXTravel > 0){
+                		speedXTravel = -speedXTravel;
+                		}
+                	
+                	if (speedYTravel < 0) {
+                		speedYTravel = -speedYTravel;
+                	} else if (speedYTravel > 0){
+                		speedYTravel = -speedYTravel;
+                	}
+                	
                 }
             }
         }
