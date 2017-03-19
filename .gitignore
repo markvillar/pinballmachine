@@ -37,7 +37,8 @@ Icon
 # =========================
 # Eclipse
 # =========================
-**/bin
+bin
 .classpath
 .project
 .settings
+*.class
