@@ -98,7 +98,27 @@ public class PinballObject extends BallObject
         machine.draw(this);
 
     }
-
+    
+    public int getSpeedX()
+    {
+    	return speedXTravel;
+    }
+    
+    public int getSpeedY()
+    {
+    	return speedYTravel;
+    }
+    
+    public void setSpeedX(int newSpeedX)
+    {
+    	speedXTravel = newSpeedX;
+    }
+    
+    public void setSpeedY(int newSpeedY)
+    {
+    	speedYTravel = newSpeedY;
+    }
+    
     public void collisionCheck(ArrayList<PinballObject> pinballObjects)
     {
         for(PinballObject other : ((ArrayList<PinballObject>)pinballObjects))
@@ -117,19 +137,16 @@ public class PinballObject extends BallObject
                 //Collision
                 if (distance < (radius + other.getRadius()))
                 {
-                	if (speedXTravel < 0) {
-                		speedXTravel = -speedXTravel;
-                		}
-                	else if (speedXTravel > 0){
-                		speedXTravel = -speedXTravel;
-                		}
+                	int x = speedXTravel;
+                    int y = speedYTravel;
+                    int x2 = other.getSpeedX();
+                    int y2 = other.getSpeedY();
                 	
-                	if (speedYTravel < 0) {
-                		speedYTravel = -speedYTravel;
-                	} else if (speedYTravel > 0){
-                		speedYTravel = -speedYTravel;
-                	}
-                	
+                	speedXTravel = x2;
+                    other.setSpeedX(x);
+                    
+                    speedYTravel = y2;
+                    other.setSpeedY(y);
                 }
             }
         }
