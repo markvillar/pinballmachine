@@ -18,10 +18,13 @@ public class BallObject
     /**
      * Constructor for objects of class BallObject
      */
-    public BallObject()
+    public BallObject(int xPos, int yPos, Color objectColor, int objectRadius, Machine theMachine)
     {
-        // initialise instance variables
-        
+        currentXLocation = xPos;
+        currentYLocation = yPos;
+        colour = objectColor;
+        radius = objectRadius;
+        machine = theMachine;
     }
     
     /**

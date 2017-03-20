@@ -44,13 +44,9 @@ public class PinballObject extends BallObject
      */
     public PinballObject(int xPos, int yPos, int xVel, int yVel, Color objectColor, int objectRadius, Machine theMachine, ArrayList<PinballObject> pinballObjects)
     {
-        currentXLocation = xPos;
-        currentYLocation = yPos;
+    	super(xPos, yPos, objectColor, objectRadius, theMachine);
         speedXTravel = xVel;
         speedYTravel = yVel;
-        colour = objectColor;
-        radius = objectRadius;
-        machine = theMachine;
         leftWallPosition = machine.getLeftWall();
         rightWallPosition = machine.getRightWall();
         topWallPosition = machine.getToptWall();
