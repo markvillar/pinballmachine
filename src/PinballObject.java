@@ -26,10 +26,6 @@ public class PinballObject extends BallObject
     private final int topWallPosition;
     private final int bottomWallPosition;
     private int distance;
-    private int diffX;
-    private int diffY;
-    private int squaredX;
-    private int squaredY;
 
     /**
      * Constructor for objects of class Pinball_Obj
@@ -126,11 +122,11 @@ public class PinballObject extends BallObject
             //Check if pinball collides to itself
             if ((currentXLocation != other.getXPosition()) && (currentYLocation != other.getYPosition()))
             {
-                diffX = currentXLocation - other.getXPosition();
-                diffY = currentYLocation - other.getYPosition();
+                int diffX = currentXLocation - other.getXPosition();
+                int diffY = currentYLocation - other.getYPosition();
                 
-                squaredX = (int) Math.pow(diffX, 2);
-                squaredY = (int) Math.pow(diffY, 2);
+                int squaredX = (int) Math.pow(diffX, 2);
+                int squaredY = (int) Math.pow(diffY, 2);
                 
                 distance = (int) Math.sqrt(squaredX + squaredY);
                 
