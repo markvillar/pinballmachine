@@ -54,14 +54,14 @@ public class Machine
     }
     
     /**
-    * Draw an PinballObject at its current position onto the view of the pinball machine
+    * Draw an BallObject at its current position onto the view of the pinball machine
     * 
-    * @param pinballObj The object to be drawn
+    * @param ballObject The object to be drawn
     */
-    public void draw(PinballObject pinballObj)
+    public void draw(BallObject ballObject)
     {
-        machine.setForegroundColor(pinballObj.getColor());
-        machine.fillCircle(pinballObj.getXPosition() - pinballObj.getRadius(), pinballObj.getYPosition() - pinballObj.getRadius(), pinballObj.getDiameter());
+        machine.setForegroundColor(ballObject.getColor());
+        machine.fillCircle(ballObject.getXPosition() - ballObject.getRadius(), ballObject.getYPosition() - ballObject.getRadius(), ballObject.getDiameter());
     }
     
     /**
