@@ -25,6 +25,7 @@ public class BallObject
         colour = objectColor;
         radius = objectRadius;
         machine = theMachine;
+        machine.draw(this);
     }
     
     /**
