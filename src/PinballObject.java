@@ -115,7 +115,7 @@ public class PinballObject extends BallObject
     	speedYTravel = newSpeedY;
     }
     
-    public void collisionCheck(ArrayList<PinballObject> pinballObjects)
+    public void collisionCheck(ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
     {
         for(PinballObject other : ((ArrayList<PinballObject>)pinballObjects))
         {   
