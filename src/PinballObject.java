@@ -145,5 +145,27 @@ public class PinballObject extends BallObject
                 }
             }
         }
+        
+        for(BallObject pinball : ((ArrayList<BallObject>)bumperObjects))
+        {   
+            //Check if pinball collides with bumper
+            if ((currentXLocation != pinball.getXPosition()) && (currentYLocation != pinball.getYPosition()))
+            {
+                int bumperDiffX = currentXLocation - pinball.getXPosition();
+                int bumperDiffY = currentYLocation - pinball.getYPosition();
+                
+                int bumperSquaredDiffX = (int) Math.pow(bumperDiffX, 2);
+                int bumperSquaredDiffY = (int) Math.pow(bumperDiffY, 2);
+                
+                int distance = (int) Math.sqrt(bumperSquaredDiffX + bumperSquaredDiffY);
+                
+                //Collision
+                if (distance < (radius + pinball.getRadius()))
+                {
+                	speedXTravel = -speedXTravel;
+                	speedYTravel = -speedYTravel;
+                }
+            }
+        }
     }
 }
