@@ -46,9 +46,13 @@ public class Demo
         {
             machine.pauseMachine();           // small delay
             pinballObj1.move();
+            pinballObj1.collisionCheck(bumperObjects, holeObjects, pinballObjects);
             pinballObj2.move();
+            pinballObj2.collisionCheck(bumperObjects, holeObjects, pinballObjects);
             pinballObj3.move();
+            pinballObj3.collisionCheck(bumperObjects, holeObjects, pinballObjects);
             pinballObj4.move();
+            pinballObj4.collisionCheck(bumperObjects, holeObjects, pinballObjects);
         }
     }
 }
