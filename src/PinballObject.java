@@ -25,7 +25,6 @@ public class PinballObject extends BallObject
     private final int rightWallPosition;
     private final int topWallPosition;
     private final int bottomWallPosition;
-    private int distance;
 
     /**
      * Constructor for objects of class Pinball_Obj
@@ -115,7 +114,7 @@ public class PinballObject extends BallObject
     	speedYTravel = newSpeedY;
     }
     
-    public void collisionCheck(ArrayList<PinballObject> pinballObjects)
+    public void collisionCheck(ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
     {
         for(PinballObject other : ((ArrayList<PinballObject>)pinballObjects))
         {   
@@ -128,7 +127,7 @@ public class PinballObject extends BallObject
                 int squaredX = (int) Math.pow(diffX, 2);
                 int squaredY = (int) Math.pow(diffY, 2);
                 
-                distance = (int) Math.sqrt(squaredX + squaredY);
+                int distance = (int) Math.sqrt(squaredX + squaredY);
                 
                 //Collision
                 if (distance < (radius + other.getRadius()))
