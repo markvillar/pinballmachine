@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Demo
 {
     private Machine machine;
+    public ArrayList<BallObject> bumperObjects;
     public ArrayList<PinballObject> pinballObjects;
 
     /**
@@ -18,6 +19,7 @@ public class Demo
     public Demo()
     {
         machine = new Machine();
+        bumperObjects = new ArrayList<BallObject>();
         pinballObjects = new ArrayList<PinballObject>();
     }
 
@@ -44,11 +46,6 @@ public class Demo
             pinballObj2.move();
             pinballObj3.move();
             pinballObj4.move();
-            
-            pinballObj1.collisionCheck(pinballObjects);
-            pinballObj2.collisionCheck(pinballObjects);
-            pinballObj3.collisionCheck(pinballObjects);
-            pinballObj4.collisionCheck(pinballObjects);
         }
     }
 }

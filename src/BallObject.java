@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.*;
 
 /**
  * Write a description of class BallObject here.
@@ -16,7 +17,7 @@ public class BallObject
     protected Machine machine;
 
     /**
-     * Constructor for objects of class BallObject
+     * Constructor for objects of class BallObject for Subclasses (PinballObjects)
      */
     public BallObject(int xPos, int yPos, Color objectColor, int objectRadius, Machine theMachine)
     {
@@ -26,6 +27,20 @@ public class BallObject
         radius = objectRadius;
         machine = theMachine;
         machine.draw(this);
+    }
+    
+    /**
+     * Generic ballObject with ArrayList argument
+     */
+    public BallObject(int xPos, int yPos, Color objectColor, int objectRadius, Machine theMachine, ArrayList<BallObject> ballObjects)
+    {
+        currentXLocation = xPos;
+        currentYLocation = yPos;
+        colour = objectColor;
+        radius = objectRadius;
+        machine = theMachine;
+        machine.draw(this);
+        ballObjects.add(this);
     }
     
     /**
