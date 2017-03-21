@@ -31,7 +31,8 @@ public class Demo
         // sample demo
         machine.resetMachine();
         
-        BallObject bumper = new BallObject(130, 120, Color.LIGHT_GRAY, 15, machine);
+        BallObject bumper1 = new BallObject(130, 120, Color.LIGHT_GRAY, 15, machine, bumperObjects);
+        BallObject bumper2 = new BallObject(520, 380, Color.LIGHT_GRAY, 15, machine, bumperObjects);
         BallObject largeHole = new BallObject(470, 230, Color.BLACK, 45, machine);
         BallObject smallHole = new BallObject(60, 60, Color.BLACK, 15, machine);
         PinballObject pinballObj1 = new PinballObject(50, 200, -5, 3, Color.RED, 10, machine, pinballObjects);
