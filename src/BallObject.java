@@ -18,7 +18,7 @@ public class BallObject
     protected Machine machine;
 
     /**
-     * Constructor for objects of class BallObject for Subclasses (PinballObjects)
+     * Constructor without ArrayList argument for objects of Subclasses (PinballObjects)
      */
     public BallObject(int xPos, int yPos, Color objectColor, int objectRadius, Machine theMachine)
     {
