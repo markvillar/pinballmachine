@@ -9,9 +9,11 @@ public class FlashPinball extends PinballObject {
 	public FlashPinball(int xPos, int yPos, int xVel, int yVel, Color objectColor, int objectRadius, Machine theMachine, ArrayList<FlashPinball> flashPinballObjects) {
 		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, flashPinballObjects);
 	//FlashPinball Constructor
+	public FlashPinball(int xPos, int yPos, int xVel, int yVel, Color objectColor, int objectRadius, Machine theMachine, ArrayList<PinballObject> pinballObjects) {
+		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, pinballObjects);
 		
 		isFlashing = true;
-		flashPinballObjects.add(this);
+		pinballObjects.add(this);
 	}
 	
 	public void move()

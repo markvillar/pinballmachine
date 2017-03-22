@@ -13,7 +13,6 @@ public class Demo
     public ArrayList<BallObject> bumperObjects;
     public ArrayList<BallObject> holeObjects;
     public ArrayList<PinballObject> pinballObjects;
-    public ArrayList<FlashPinball> flashPinballObjects;
 
     /**
      * Constructor for objects of class Demo
@@ -24,7 +23,6 @@ public class Demo
         bumperObjects = new ArrayList<BallObject>();
         holeObjects = new ArrayList<BallObject>();
         pinballObjects = new ArrayList<PinballObject>();
-        flashPinballObjects = new ArrayList<FlashPinball>();
     }
 
     /**
