@@ -12,6 +12,7 @@ public class BallObject
     // instance variables - replace the example below with your own
     protected int currentXLocation;
     protected int currentYLocation;
+    protected int distance;
     protected Color colour;
     protected int radius;
     protected Machine machine;
