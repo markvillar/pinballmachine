@@ -19,11 +19,6 @@ public class FlashPinball extends PinballObject {
 		super.move();
 	}
 	
-	public void collisionCheck(bumperObjects, holeObjects, pinballObjects)
-	{
-		super.collisionCheck(bumperObjects, holeObjects, pinballObjects);
-	}
-	
 	public void toggleFlash()
 	{
 		
