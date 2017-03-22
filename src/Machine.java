@@ -48,7 +48,7 @@ public class Machine
      * 
      * @param pinballObj The object to be erased
      */
-    public void erase(PinballObject pinballObj)
+    public void erase(BallObject pinballObj)
     {
         machine.eraseCircle(pinballObj.getXPosition() - pinballObj.getRadius(), pinballObj.getYPosition()- pinballObj.getRadius(), pinballObj.getDiameter());
     }

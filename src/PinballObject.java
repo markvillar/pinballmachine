@@ -21,6 +21,7 @@ public class PinballObject extends BallObject
 {
     private int speedXTravel;
     private int speedYTravel;
+    private int distanceFromBumper;
     private final int leftWallPosition;
     private final int rightWallPosition;
     private final int topWallPosition;
@@ -146,22 +147,26 @@ public class PinballObject extends BallObject
             }
         }
         
+        //Check if pinball collides with bumper
         for(BallObject pinball : ((ArrayList<BallObject>)bumperObjects))
-        {   
-                int bumperDiffX = currentXLocation - pinball.getXPosition();
-                int bumperDiffY = currentYLocation - pinball.getYPosition();
-                
-                int bumperSquaredDiffX = (int) Math.pow(bumperDiffX, 2);
-                int bumperSquaredDiffY = (int) Math.pow(bumperDiffY, 2);
-                
-                distance = (int) Math.sqrt(bumperSquaredDiffX + bumperSquaredDiffY);
-                
-                //Collision
-                if (distance < (radius + pinball.getRadius()))
-                {
-                	speedXTravel = -speedXTravel;
-                	speedYTravel = -speedYTravel;
-                }
+        {
+            int bumperDiffX = currentXLocation - pinball.getXPosition();
+            int bumperDiffY = currentYLocation - pinball.getYPosition();
+            
+            int bumperSquaredDiffX = (int) Math.pow(bumperDiffX, 2);
+            int bumperSquaredDiffY = (int) Math.pow(bumperDiffY, 2);
+            
+            distanceFromBumper = (int) Math.sqrt(bumperSquaredDiffX + bumperSquaredDiffY);
+            
+            //Collision
+            if (distanceFromBumper < (radius + pinball.getRadius()))
+            {
+            	speedXTravel = -speedXTravel;
+            	speedYTravel = -speedYTravel;
+            }
+            
+            //Refresh the bumper
+            pinball.reDraw();
         }
     }
 }

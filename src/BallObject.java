@@ -82,5 +82,11 @@ public class BallObject
     public Color getColor()
     {
         return colour;
-    }    
+    }
+    
+    public void reDraw()
+    {
+    	machine.erase(this);
+    	machine.draw(this);
+    }
 }
