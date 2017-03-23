@@ -60,6 +60,7 @@ public class SizablePinball extends PinballObject {
        
    }
 	
+	//Randomiser
 	public int random(int min, int max)
 	{
 	   int range = Math.abs(max - min) + 1;
