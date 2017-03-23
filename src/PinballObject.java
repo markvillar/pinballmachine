@@ -21,7 +21,6 @@ public class PinballObject extends BallObject
 {
     private int speedXTravel;
     private int speedYTravel;
-    private int distanceFromBumper;
     private final int leftWallPosition;
     private final int rightWallPosition;
     private final int topWallPosition;
@@ -128,7 +127,7 @@ public class PinballObject extends BallObject
                 int squaredX = (int) Math.pow(diffX, 2);
                 int squaredY = (int) Math.pow(diffY, 2);
                 
-                distance = (int) Math.sqrt(squaredX + squaredY);
+                int distance = (int) Math.sqrt(squaredX + squaredY);
                 
                 //Collision
                 if (distance < (radius + other.getRadius()))
@@ -156,7 +155,7 @@ public class PinballObject extends BallObject
             int bumperSquaredDiffX = (int) Math.pow(bumperDiffX, 2);
             int bumperSquaredDiffY = (int) Math.pow(bumperDiffY, 2);
             
-            distanceFromBumper = (int) Math.sqrt(bumperSquaredDiffX + bumperSquaredDiffY);
+            int distanceFromBumper = (int) Math.sqrt(bumperSquaredDiffX + bumperSquaredDiffY);
             
             //Collision
             if (distanceFromBumper < (radius + pinball.getRadius()))
