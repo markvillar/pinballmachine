@@ -82,7 +82,7 @@ public class PinballObject extends BallObject
             speedYTravel = -speedYTravel;
         }
 
-        // check if it has hit the bottomwall
+        // check if it has hit the bottom Wall
         if(currentYLocation >= (bottomWallPosition - radius))
         {
             currentYLocation = bottomWallPosition - radius;
