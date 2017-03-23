@@ -5,16 +5,12 @@ public class FlashPinball extends PinballObject {
 	
 	//Instance Variables
 	private boolean isFlashing;
-	private Color[] flasObjectColourList = new Color[]{Color.RED, Color.BLUE, Color.GREEN};
-	private Color currentColour;
-	private int currentColourTracker;
 	
 	//FlashPinball Constructor
 	public FlashPinball(int xPos, int yPos, int xVel, int yVel, Color objectColor, int objectRadius, Machine theMachine, ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
 	{
 		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, pinballObjects);
 		
-		currentColourTracker = 0;
 		isFlashing = true;
 	}
 	
@@ -28,41 +24,33 @@ public class FlashPinball extends PinballObject {
        // check if it has hit the left Wall
        if(currentXLocation <= (leftWallPosition + radius))
        {
-    	   this.toggleColour(currentColourTracker);
-    	   this.changeColour(currentColourTracker);
+    	   this.changeColour(colour);
        }
        
        // check if it has hit the right Wall
        if(currentXLocation >= (rightWallPosition - radius))
        {
-    	   this.toggleColour(currentColourTracker);
-    	   this.changeColour(currentColourTracker);
+    	   this.changeColour(colour);
        }
        
        //check if it has hit the top Wall
        if(currentYLocation <= (topWallPosition + radius))
        {
-    	   this.toggleColour(currentColourTracker);
-    	   this.changeColour(currentColourTracker);
+    	   this.changeColour(colour);
        }
        
        // check if it has hit the bottom Wall
        if(currentYLocation >= (bottomWallPosition - radius))
        {
-    	   this.toggleColour(currentColourTracker);
-    	   this.changeColour(currentColourTracker);
+    	   this.changeColour(colour);
        }
-       
-       currentColour = flasObjectColourList[currentColourTracker];
-       
-       //Change flashballObject colour
-       
        
        // draw again at new position
        machine.draw(this);
        
    }
 	
+	//Collision check
 	public void collisionCheck(ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
 	{
 		super.collisionCheck(bumperObjects, holeObjects, pinballObjects);
@@ -87,24 +75,25 @@ public class FlashPinball extends PinballObject {
 		}
 	}
 	
-	//Colour change toggle
-	public void toggleColour(int currentColourTracker)
+	//Change the colour
+	private void changeColour(Color colour)
 	{
-		if (currentColourTracker <= 3)
+		if (this.colour == Color.RED)
 		{
-			currentColourTracker = 0;
+			this.colour = Color.BLUE;
+		}
+		else if (this.colour == Color.BLUE)
+		{
+			this.colour = Color.GREEN;
+		}
+		else if (this.colour == Color.GREEN)
+		{
+			this.colour = Color.RED;
 		}
 		else
 		{
-			currentColourTracker = currentColourTracker + 1;
+			this.colour = Color.RED;
 		}
-	}
-	
-	//Change the colour
-	public void changeColour(int currentColourTracker)
-	{
-		currentColour = flasObjectColourList[currentColourTracker];
-		colour = currentColour;
 	}
 	
 }
