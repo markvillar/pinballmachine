@@ -20,9 +20,14 @@ public class FlashPinball extends PinballObject {
 		super.move();
 	}
 	
-	public void toggleFlash()
+	public void toggleFlash(boolean isFlashing)
 	{
-		
+		if (isFlashing == true){
+			isFlashing = false;
+		}
+		else if (isFlashing == false){
+			isFlashing = true;
+		}
 	}
 	
 	public void toggleColour()
