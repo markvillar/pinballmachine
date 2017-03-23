@@ -18,8 +18,37 @@ public class FlashPinball extends PinballObject {
 	public void move()
 	{
 		super.move();
-		colour = Color.RED;
-	}
+        // remove from universe at the current position
+       machine.erase(this);
+       
+       // check if it has hit the left Wall
+       if(currentXLocation <= (leftWallPosition + radius))
+       {
+    	   colour = Color.CYAN;
+       }
+       
+       // check if it has hit the right Wall
+       if(currentXLocation >= (rightWallPosition - radius))
+       {
+    	   colour = Color.GREEN;
+       }
+       
+       //check if it has hit the top Wall
+       if(currentYLocation <= (topWallPosition + radius))
+       {
+    	   colour = Color.PINK;
+       }
+       
+       // check if it has hit the bottom Wall
+       if(currentYLocation >= (bottomWallPosition - radius))
+       {
+    	   colour = Color.RED;
+       }
+       
+       // draw again at new position
+       machine.draw(this);
+       
+   }
 	
 	public void collisionCheck(ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
 	{
