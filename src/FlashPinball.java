@@ -29,6 +29,7 @@ public class FlashPinball extends PinballObject {
 		this.toggleFlash(isFlashing);
 	}
 	
+	//Flash method
 	public void toggleFlash(boolean isFlashing)
 	{
 		if (isFlashing == true){
@@ -39,6 +40,7 @@ public class FlashPinball extends PinballObject {
 		}
 	}
 	
+	//Colour change toggle
 	public void toggleColour()
 	{
 		
