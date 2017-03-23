@@ -18,6 +18,7 @@ public class FlashPinball extends PinballObject {
 		isFlashing = true;
 	}
 	
+	//Move the flashballObject around the machine
 	public void move()
 	{
 		super.move();
@@ -63,6 +64,7 @@ public class FlashPinball extends PinballObject {
 		super.collisionCheck(bumperObjects, holeObjects, pinballObjects);
 		
 		//Check if flashball colliding to itself
+		//Check if flashballObject colliding to itself
         if ((currentXLocation != this.getXPosition()) && (currentYLocation != this.getYPosition()))
         {
 			//Toggle Flash
@@ -88,6 +90,7 @@ public class FlashPinball extends PinballObject {
 		
 	}
 	
+	//Change the colour
 	public void changeColour(int currentColourTracker)
 	{
 		
