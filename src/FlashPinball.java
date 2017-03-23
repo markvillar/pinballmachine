@@ -28,24 +28,28 @@ public class FlashPinball extends PinballObject {
        // check if it has hit the left Wall
        if(currentXLocation <= (leftWallPosition + radius))
        {
+    	   this.toggleColour(currentColourTracker);
     	   this.changeColour(currentColourTracker);
        }
        
        // check if it has hit the right Wall
        if(currentXLocation >= (rightWallPosition - radius))
        {
+    	   this.toggleColour(currentColourTracker);
     	   this.changeColour(currentColourTracker);
        }
        
        //check if it has hit the top Wall
        if(currentYLocation <= (topWallPosition + radius))
        {
+    	   this.toggleColour(currentColourTracker);
     	   this.changeColour(currentColourTracker);
        }
        
        // check if it has hit the bottom Wall
        if(currentYLocation >= (bottomWallPosition - radius))
        {
+    	   this.toggleColour(currentColourTracker);
     	   this.changeColour(currentColourTracker);
        }
        
@@ -63,7 +67,6 @@ public class FlashPinball extends PinballObject {
 	{
 		super.collisionCheck(bumperObjects, holeObjects, pinballObjects);
 		
-		//Check if flashball colliding to itself
 		//Check if flashballObject colliding to itself
         if ((currentXLocation != this.getXPosition()) && (currentYLocation != this.getYPosition()))
         {
@@ -85,15 +88,23 @@ public class FlashPinball extends PinballObject {
 	}
 	
 	//Colour change toggle
-	public void toggleColour()
+	public void toggleColour(int currentColourTracker)
 	{
-		
+		if (currentColourTracker <= 3)
+		{
+			currentColourTracker = 0;
+		}
+		else
+		{
+			currentColourTracker = currentColourTracker + 1;
+		}
 	}
 	
 	//Change the colour
 	public void changeColour(int currentColourTracker)
 	{
-		
+		currentColour = flasObjectColourList[currentColourTracker];
+		colour = currentColour;
 	}
 	
 }
