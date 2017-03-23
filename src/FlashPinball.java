@@ -13,7 +13,6 @@ public class FlashPinball extends PinballObject {
 		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, pinballObjects);
 		
 		isFlashing = true;
-		pinballObjects.add(this);
 	}
 	
 	public void move()
