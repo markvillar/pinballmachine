@@ -129,7 +129,7 @@ public class PinballObject extends BallObject
                 
                 int distance = (int) Math.sqrt(squaredX + squaredY);
                 
-                //Collision
+                //Pinball Collision
                 if (distance < (radius + other.getRadius()))
                 {
                 	int x = speedXTravel;
@@ -146,7 +146,7 @@ public class PinballObject extends BallObject
             }
         }
         
-        //Check if pinball collides with bumper
+        //Check if Pinball collides with a bumper
         for(BallObject pinball : ((ArrayList<BallObject>)bumperObjects))
         {
             int bumperDiffX = currentXLocation - pinball.getXPosition();
@@ -157,7 +157,7 @@ public class PinballObject extends BallObject
             
             int distanceFromBumper = (int) Math.sqrt(bumperSquaredDiffX + bumperSquaredDiffY);
             
-            //Collision
+            //Pinball collided with a bumper
             if (distanceFromBumper < (radius + pinball.getRadius()))
             {
             	speedXTravel = -speedXTravel;
