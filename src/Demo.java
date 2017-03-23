@@ -61,7 +61,6 @@ public class Demo
             
             sizeablePinball1.move();
             sizeablePinball1.collisionCheck(bumperObjects, holeObjects, pinballObjects);
-            sizeablePinball1.move();
             
             sizeablePinball2.move();
             sizeablePinball2.collisionCheck(bumperObjects, holeObjects, pinballObjects);
