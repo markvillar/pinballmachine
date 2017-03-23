@@ -56,9 +56,13 @@ public class FlashPinball extends PinballObject {
 	{
 		super.collisionCheck(bumperObjects, holeObjects, pinballObjects);
 		
-		//Toggle Flash
-		this.toggleFlash(isFlashing);
-		colour = Color.BLUE;
+		//Check if flashball colliding to itself
+        if ((currentXLocation != this.getXPosition()) && (currentYLocation != this.getYPosition()))
+        {
+			//Toggle Flash
+			this.toggleFlash(isFlashing);
+			colour = Color.BLUE;
+        }
 	}
 	
 	//Flash method
