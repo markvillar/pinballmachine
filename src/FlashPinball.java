@@ -19,7 +19,7 @@ public class FlashPinball extends PinballObject {
 	public void move()
 	{
 		super.move();
-		
+		colour = Color.RED;
 	}
 	
 	public void collisionCheck(ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
@@ -28,6 +28,7 @@ public class FlashPinball extends PinballObject {
 		
 		//Toggle Flash
 		this.toggleFlash(isFlashing);
+		colour = Color.BLUE;
 	}
 	
 	//Flash method
