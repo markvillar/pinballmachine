@@ -5,8 +5,8 @@ public class FlashPinball extends PinballObject {
 	
 	//Instance Variables
 	private boolean isFlashing;
-	private String[] flasObjectColourList = new String[]{"RED", "BLUE", "Green"};
-	private String currentColour;
+	private Color[] flasObjectColourList = new Color[]{Color.RED, Color.BLUE, Color.GREEN};
+	private Color currentColour;
 	private int currentColourTracker;
 	
 	//FlashPinball Constructor
