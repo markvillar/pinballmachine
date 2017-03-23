@@ -34,25 +34,25 @@ public class SizablePinball extends PinballObject {
        // check if it has hit the left Wall
        if(currentXLocation <= (leftWallPosition + radius))
        {
-    	   
+    	   this.radius = this.decreaseRadius(this.radius);
        }
        
        // check if it has hit the right Wall
        if(currentXLocation >= (rightWallPosition - radius))
        {
-    	   
+    	   this.radius = this.decreaseRadius(this.radius);
        }
        
        //check if it has hit the top Wall
        if(currentYLocation <= (topWallPosition + radius))
        {
-    	   
+    	   this.radius = this.increaseRadius(this.radius);
        }
        
        // check if it has hit the bottom Wall
        if(currentYLocation >= (bottomWallPosition - radius))
        {
-    	   
+    	   this.radius = this.increaseRadius(this.radius);
        }
        
        // draw again at new position
