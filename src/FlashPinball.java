@@ -6,12 +6,14 @@ public class FlashPinball extends PinballObject {
 	//Instance Variables
 	private boolean isFlashing;
 	private String[] flasObjectColourList = new String[]{"RED", "BLUE", "Green"};
+	private int currentColour;
 	
 	//FlashPinball Constructor
 	public FlashPinball(int xPos, int yPos, int xVel, int yVel, Color objectColor, int objectRadius, Machine theMachine, ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
 	{
 		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, pinballObjects);
 		
+		currentColour = 0;
 		isFlashing = true;
 	}
 	
