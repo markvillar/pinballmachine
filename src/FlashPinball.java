@@ -8,7 +8,7 @@ public class FlashPinball extends PinballObject {
 	private String[] flasObjectColourList = new String[]{"RED", "BLUE", "Green"};
 	
 	//FlashPinball Constructor
-	public FlashPinball(int xPos, int yPos, int xVel, int yVel, Color objectColor, int objectRadius, Machine theMachine, ArrayList<PinballObject> pinballObjects) {
+	public FlashPinball(int xPos, int yPos, int xVel, int yVel, Color objectColor, int objectRadius, Machine theMachine, ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects) {
 		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, pinballObjects);
 		
 		isFlashing = true;
@@ -18,6 +18,15 @@ public class FlashPinball extends PinballObject {
 	public void move()
 	{
 		super.move();
+		
+	}
+	
+	public void collisionCheck(ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
+	{
+		super.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+		
+		//Toggle Flash
+		this.toggleFlash(isFlashing);
 	}
 	
 	public void toggleFlash(boolean isFlashing)
