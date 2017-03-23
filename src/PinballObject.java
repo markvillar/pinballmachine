@@ -167,5 +167,26 @@ public class PinballObject extends BallObject
             //Refresh the bumper
             pinball.reDraw();
         }
+        
+        //Check if Pinball goes in a hole
+        for(BallObject pinball : ((ArrayList<BallObject>)holeObjects))
+        {
+            int bumperDiffX = currentXLocation - pinball.getXPosition();
+            int bumperDiffY = currentYLocation - pinball.getYPosition();
+            
+            int bumperSquaredDiffX = (int) Math.pow(bumperDiffX, 2);
+            int bumperSquaredDiffY = (int) Math.pow(bumperDiffY, 2);
+            
+            int distanceFromBumper = (int) Math.sqrt(bumperSquaredDiffX + bumperSquaredDiffY);
+            
+            //Pinball goes in a hole
+            if (distanceFromBumper < (radius + pinball.getRadius()))
+            {
+            	//Do something
+            }
+            
+            //Refresh the hole
+            pinball.reDraw();
+        }
     }
 }
