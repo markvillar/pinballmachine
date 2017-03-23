@@ -82,20 +82,13 @@ public class FlashPinball extends PinballObject {
 		}
 	}
 	
-	public void changeColour(int currentColourTracker)
-	{
-		if (currentColourTracker == 3)
-		{
-			currentColourTracker = 0;
-		}
-		else
-		{
-			currentColourTracker =+ 1;
-		}
-	}
-	
 	//Colour change toggle
 	public void toggleColour()
+	{
+		
+	}
+	
+	public void changeColour(int currentColourTracker)
 	{
 		
 	}
