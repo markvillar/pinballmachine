@@ -19,12 +19,12 @@ import java.lang.Math;
 
 public class PinballObject extends BallObject
 {
-    private int speedXTravel;
-    private int speedYTravel;
-    private final int leftWallPosition;
-    private final int rightWallPosition;
-    private final int topWallPosition;
-    private final int bottomWallPosition;
+    protected int speedXTravel;
+    protected int speedYTravel;
+    protected final int leftWallPosition;
+    protected final int rightWallPosition;
+    protected final int topWallPosition;
+    protected final int bottomWallPosition;
 
     /**
      * Constructor for objects of class Pinball_Obj
