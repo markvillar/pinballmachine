@@ -20,7 +20,7 @@ public class SizablePinball extends PinballObject {
 			Machine theMachine, ArrayList<PinballObject> pinballObjects) {
 		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, pinballObjects);
 		maxRadius = 60;
-		minRadius = 20;
+		minRadius = 10;
 		maxSpeed = 15;
 		minSpeed = 5;
 	}
