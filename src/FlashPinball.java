@@ -6,14 +6,15 @@ public class FlashPinball extends PinballObject {
 	//Instance Variables
 	private boolean isFlashing;
 	private String[] flasObjectColourList = new String[]{"RED", "BLUE", "Green"};
-	private int currentColour;
+	private String currentColour;
+	private int currentColourTracker;
 	
 	//FlashPinball Constructor
 	public FlashPinball(int xPos, int yPos, int xVel, int yVel, Color objectColor, int objectRadius, Machine theMachine, ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
 	{
 		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, pinballObjects);
 		
-		currentColour = 0;
+		currentColourTracker = 0;
 		isFlashing = true;
 	}
 	
@@ -26,26 +27,31 @@ public class FlashPinball extends PinballObject {
        // check if it has hit the left Wall
        if(currentXLocation <= (leftWallPosition + radius))
        {
-    	   colour = Color.CYAN;
+    	   this.changeColour(currentColourTracker);
        }
        
        // check if it has hit the right Wall
        if(currentXLocation >= (rightWallPosition - radius))
        {
-    	   colour = Color.GREEN;
+    	   this.changeColour(currentColourTracker);
        }
        
        //check if it has hit the top Wall
        if(currentYLocation <= (topWallPosition + radius))
        {
-    	   colour = Color.PINK;
+    	   this.changeColour(currentColourTracker);
        }
        
        // check if it has hit the bottom Wall
        if(currentYLocation >= (bottomWallPosition - radius))
        {
-    	   colour = Color.RED;
+    	   this.changeColour(currentColourTracker);
        }
+       
+       currentColour = flasObjectColourList[currentColourTracker];
+       
+       //Change flashballObject colour
+       
        
        // draw again at new position
        machine.draw(this);
@@ -73,6 +79,18 @@ public class FlashPinball extends PinballObject {
 		}
 		else if (isFlashing == false){
 			isFlashing = true;
+		}
+	}
+	
+	public void changeColour(int currentColourTracker)
+	{
+		if (currentColourTracker == 3)
+		{
+			currentColourTracker = 0;
+		}
+		else
+		{
+			currentColourTracker =+ 1;
 		}
 	}
 	
