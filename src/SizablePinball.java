@@ -60,6 +60,16 @@ public class SizablePinball extends PinballObject {
        
    }
 	
+	private void decreaseRadius(int radius)
+	{
+		this.radius = (this.radius - ((this.radius/100) * 10));
+	}
+	
+	private void increaseRadius(int radius)
+	{
+		this.radius = (this.radius + ((this.radius/100) * 10));
+	}
+	
 	//Randomiser
 	public int random(int min, int max)
 	{
