@@ -64,7 +64,7 @@ public class FlashPinball extends PinballObject {
         }
 	}
 	
-	//Flash method
+	//Toggle flash method
 	public void toggleFlash(boolean isFlashing)
 	{
 		if (isFlashing == true){
