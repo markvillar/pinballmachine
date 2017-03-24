@@ -34,25 +34,25 @@ public class SizablePinball extends PinballObject {
        // check if it has hit the left Wall
        if(currentXLocation <= (leftWallPosition + radius))
        {
-    	   this.radius = this.decreaseRadius(this.radius);
+    	   radius = this.decreaseRadius(radius);
        }
        
        // check if it has hit the right Wall
        if(currentXLocation >= (rightWallPosition - radius))
        {
-    	   this.radius = this.decreaseRadius(this.radius);
+    	   radius = this.increaseRadius(radius);
        }
        
        //check if it has hit the top Wall
        if(currentYLocation <= (topWallPosition + radius))
        {
-    	   this.radius = this.increaseRadius(this.radius);
+    	   radius = this.decreaseRadius(radius);
        }
        
        // check if it has hit the bottom Wall
        if(currentYLocation >= (bottomWallPosition - radius))
        {
-    	   this.radius = this.increaseRadius(this.radius);
+    	   radius = this.increaseRadius(radius);
        }
        
        // draw again at new position
@@ -60,14 +60,26 @@ public class SizablePinball extends PinballObject {
        
    }
 	
-	private int decreaseRadius(int radius)
+	private int decreaseRadius(int radii)
 	{
-		return this.radius = (this.radius - ((this.radius/100) * 10));
+		int tempRadius = (radii - (radii/100) * 10);
+		return tempRadius;
 	}
 	
-	private int increaseRadius(int radius)
+	private int increaseRadius(int radii)
 	{
-		return this.radius = (this.radius + ((this.radius/100) * 10));
+		int tempRadius = (radii + (radii/100) * 10);
+		return tempRadius;
+	}
+	
+	public int getRadius()
+	{
+		return radius;
+	}
+	
+	public void setRadius(int newRadius)
+	{
+		radius = newRadius;
 	}
 	
 	//Randomiser
