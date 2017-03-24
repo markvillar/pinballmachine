@@ -9,11 +9,11 @@ import java.util.ArrayList;
  */
 public class Demo
 {
-    private Machine machine;
+	private Machine machine;
     public ArrayList<BallObject> bumperObjects;
     public ArrayList<BallObject> holeObjects;
     public ArrayList<PinballObject> pinballObjects;
-
+    
     /**
      * Constructor for objects of class Demo
      */
