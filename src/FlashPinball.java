@@ -76,12 +76,9 @@ public class FlashPinball extends PinballObject {
                 if (isFlashing == true)
                 {
                 	this.changeColour(colour);
-                	this.changeColour(colour);
-                	this.changeColour(colour);
-                	this.changeColour(colour);
                 }
                 
-                //Pinball Collision
+                //Flashball Collision
                 if (distance < (radius + other.getRadius()))
                 {
                 	isFlashing = true;
