@@ -180,9 +180,9 @@ public class PinballObject extends BallObject
             int distanceFromHole = (int) Math.sqrt(holeSquaredDiffX + holeSquaredDiffY);
             
             //Pinball goes in a hole
-            if (distanceFromHole < (radius + pinball.getRadius()))
+            if ((distanceFromHole <= Math.abs(radius - pinball.getRadius())))
             {
-            	//Do something?
+            	System.out.println("Inside the Circle!");
             }
             
             //Refresh the hole
