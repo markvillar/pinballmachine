@@ -192,7 +192,7 @@ public class PinballObject extends BallObject
             
             int distanceFromHole = (int) Math.sqrt(holeSquaredDiffX + holeSquaredDiffY);
             
-            //Pinball goes in a hole
+            //Pinball goes in a hole and looses all points
             if ((distanceFromHole <= Math.abs(radius - pinball.getRadius())))
             {
             	this.isObjectRemoved = true;
