@@ -36,16 +36,16 @@ public class Demo
         BallObject bumper1 = new BallObject(170, 220, Color.LIGHT_GRAY, 15, machine, bumperObjects);
         BallObject bumper2 = new BallObject(520, 460, Color.LIGHT_GRAY, 15, machine, bumperObjects);
         
-        BallObject largeHole = new BallObject(470, 230, Color.BLACK, 70, machine, holeObjects);
-        BallObject smallHole = new BallObject(60, 60, Color.BLACK, 15, machine, holeObjects);
+        BallObject largeHole = new BallObject(470, 230, Color.BLACK, 50, machine, holeObjects);
+        BallObject smallHole = new BallObject(60, 60, Color.BLACK, 30, machine, holeObjects);
         
-        FlashPinball flashPinball1 = new FlashPinball(140, 400, -5, 3, Color.RED, 45, machine, bumperObjects, holeObjects, pinballObjects);
-        FlashPinball flashPinball2 = new FlashPinball(240, 200, -7, 8, Color.RED, 50, machine, bumperObjects, holeObjects, pinballObjects);
-        FlashPinball flashPinball3 = new FlashPinball(400, 350, 7, 8, Color.RED, 30, machine, bumperObjects, holeObjects, pinballObjects);
+        FlashPinball flashPinball1 = new FlashPinball(140, 400, -5, 3, Color.RED, 38, machine, bumperObjects, holeObjects, pinballObjects);
+        FlashPinball flashPinball2 = new FlashPinball(240, 200, -7, 8, Color.RED, 30, machine, bumperObjects, holeObjects, pinballObjects);
+        FlashPinball flashPinball3 = new FlashPinball(400, 350, 7, 8, Color.RED, 28, machine, bumperObjects, holeObjects, pinballObjects);
         
-        SizablePinball sizeablePinball1 = new SizablePinball(100, 300, 1, 2, Color.CYAN, 55, machine, pinballObjects);
-        SizablePinball sizeablePinball2 = new SizablePinball(450, 125, -1, -1, Color.MAGENTA, 40, machine, pinballObjects);
-        SizablePinball sizeablePinball3 = new SizablePinball(100, 200, 2, -2, Color.YELLOW, 25, machine, pinballObjects);
+        SizablePinball sizeablePinball1 = new SizablePinball(100, 300, 1, 2, Color.CYAN, 25, machine, pinballObjects);
+        SizablePinball sizeablePinball2 = new SizablePinball(450, 125, -1, -1, Color.MAGENTA, 45, machine, pinballObjects);
+        SizablePinball sizeablePinball3 = new SizablePinball(100, 200, 2, -2, Color.YELLOW, 35, machine, pinballObjects);
         
         while (machine.getMachineStatus() == true)
         {
