@@ -77,4 +77,32 @@ public class SizablePinball extends PinballObject {
 	   return (int) ((Math.random() * range) + (min <= max ? min : max));
 	}
 	
+    public void collisionCheck(ArrayList<BallObject> bumperObjects, ArrayList<BallObject> holeObjects, ArrayList<PinballObject> pinballObjects)
+    {
+    	super.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+    	
+        for(PinballObject other : ((ArrayList<PinballObject>)pinballObjects))
+        {   
+            //Prevent Pinball from colliding on itself
+            if ((currentXLocation != other.getXPosition()) && (currentYLocation != other.getYPosition()))
+            {
+                int diffX = currentXLocation - other.getXPosition();
+                int diffY = currentYLocation - other.getYPosition();
+                
+                int squaredX = (int) Math.pow(diffX, 2);
+                int squaredY = (int) Math.pow(diffY, 2);
+                
+                int distance = (int) Math.sqrt(squaredX + squaredY);
+                
+                //Pinball Collision
+                if (distance < (radius + other.getRadius()))
+                {
+                	//Give new random speed for X and Y values
+                	speedXTravel = this.random(2, 8);
+                	speedYTravel = this.random(2, 10);
+                }
+            }
+        }
+    }
+	
 }
