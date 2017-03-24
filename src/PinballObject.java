@@ -25,6 +25,8 @@ public class PinballObject extends BallObject
     protected final int rightWallPosition;
     protected final int topWallPosition;
     protected final int bottomWallPosition;
+    protected final int gapWidth;
+    protected final int lengthToGap;
     protected int myScore;
     protected boolean isObjectRemoved;
 
@@ -48,6 +50,8 @@ public class PinballObject extends BallObject
         rightWallPosition = machine.getRightWall();
         topWallPosition = machine.getToptWall();
         bottomWallPosition = machine.getBottomWall();
+        gapWidth = machine.getGapWidth();
+        lengthToGap = machine.getLengthToGap();
         myScore = 0;
         isObjectRemoved = false;
         pinballObjects.add(this);
@@ -92,9 +96,19 @@ public class PinballObject extends BallObject
         // check if it has hit the bottom Wall
         if(currentYLocation >= (bottomWallPosition - radius))
         {
-            currentYLocation = bottomWallPosition - radius;
-            speedYTravel = -speedYTravel;
-            myScore = myScore + 1;
+        	//Go through the Gap
+        	if (currentXLocation >= lengthToGap && currentXLocation < (lengthToGap + gapWidth))
+        	{
+        		System.out.println("Gap!");
+        	}
+        	
+        	//Hits the bottom wall - Bounce back up!
+        	else if (currentXLocation <= lengthToGap || currentXLocation > (lengthToGap + gapWidth))
+        	{
+                currentYLocation = bottomWallPosition - radius;
+                speedYTravel = -speedYTravel;
+                myScore = myScore + 1;
+        	}
         }
         
         // draw again at new position
