@@ -177,12 +177,12 @@ public class PinballObject extends BallObject
             int bumperSquaredDiffX = (int) Math.pow(bumperDiffX, 2);
             int bumperSquaredDiffY = (int) Math.pow(bumperDiffY, 2);
             
-            int distanceFromBumper = (int) Math.sqrt(bumperSquaredDiffX + bumperSquaredDiffY);
+            int distanceFromHole = (int) Math.sqrt(bumperSquaredDiffX + bumperSquaredDiffY);
             
             //Pinball goes in a hole
-            if (distanceFromBumper < (radius + pinball.getRadius()))
+            if (distanceFromHole < (radius + pinball.getRadius()))
             {
-            	//Do something
+            	//Do something?
             }
             
             //Refresh the hole
