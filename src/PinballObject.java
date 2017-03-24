@@ -101,12 +101,13 @@ public class PinballObject extends BallObject
         	{
         		// Pinball falls between the gap
             	
-        		if ((currentYLocation + radius) >= 560)
+        		if ((currentYLocation + radius) >= 600)
         		{
                 	this.isObjectRemoved = true;
                 	machine.erase(this);
-                	System.out.println("Caught!");
                 	machine.addTotalScore(myScore);
+                	speedXTravel = 0;
+                	speedYTravel = 5;
         		}
         	}
         	
