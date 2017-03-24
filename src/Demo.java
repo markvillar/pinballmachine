@@ -50,26 +50,85 @@ public class Demo
         while (machine.getMachineStatus() == true)
         {
             machine.pauseMachine();		// small delay
-            flashPinball1.move();
-            flashPinball1.collisionCheck(bumperObjects, holeObjects, pinballObjects);
             
-            flashPinball2.move();
-            flashPinball2.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            /**
+             * Primary Pinball
+             */
             
-            flashPinball3.move();
-            flashPinball3.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            //FlashPinball 1
+            if (flashPinball1.isObjectRemoved == false)
+            {
+	            flashPinball1.move();
+	            flashPinball1.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            }
+            else
+            {
+            	pinballObjects.remove(flashPinball1);
+            }
             
-            sizeablePinball1.move();
-            sizeablePinball1.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            //FlashPinball 2
+            if (flashPinball2.isObjectRemoved == false)
+            {
+	            flashPinball2.move();
+	            flashPinball2.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            }
+            else
+            {
+            	pinballObjects.remove(flashPinball2);
+            }
             
-            sizeablePinball2.move();
-            sizeablePinball2.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            //FlashPinball 3
+            if (flashPinball3.isObjectRemoved == false)
+            {
+	            flashPinball3.move();
+	            flashPinball3.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            }
+            else
+            {
+            	pinballObjects.remove(flashPinball3);
+            }
             
-            sizeablePinball3.move();
-            sizeablePinball3.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            /**
+             * Second Pinball Type
+             */
             
+            //SizeablePinball 1
+            if (sizeablePinball1.isObjectRemoved == false)
+            {
+                sizeablePinball1.move();
+                sizeablePinball1.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            }
+            else
+            {
+            	pinballObjects.remove(sizeablePinball1);
+            }
+            
+            //SizeablePinball 2
+            if (sizeablePinball2.isObjectRemoved == false)
+            {
+                sizeablePinball2.move();
+                sizeablePinball2.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            }
+            else
+            {
+            	pinballObjects.remove(sizeablePinball2);
+            }
+            
+            //SizeablePinball 3
+            if (sizeablePinball3.isObjectRemoved == false)
+            {
+                sizeablePinball3.move();
+                sizeablePinball3.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            }
+            else
+            {
+            	pinballObjects.remove(sizeablePinball3);
+            }
+            
+            // Check if pinballObjects ArrayList still have objects simulating
             if (pinballObjects.isEmpty())
             {
+            	//Stops the machine
             	machine.setMachineStatus(false);
             }
         }

@@ -25,6 +25,7 @@ public class PinballObject extends BallObject
     protected final int rightWallPosition;
     protected final int topWallPosition;
     protected final int bottomWallPosition;
+    protected boolean isObjectRemoved;
 
     /**
      * Constructor for objects of class Pinball_Obj
@@ -46,6 +47,7 @@ public class PinballObject extends BallObject
         rightWallPosition = machine.getRightWall();
         topWallPosition = machine.getToptWall();
         bottomWallPosition = machine.getBottomWall();
+        isObjectRemoved = false;
         pinballObjects.add(this);
     }
 
@@ -182,7 +184,8 @@ public class PinballObject extends BallObject
             //Pinball goes in a hole
             if ((distanceFromHole <= Math.abs(radius - pinball.getRadius())))
             {
-            	System.out.println("Inside the Circle!");
+            	this.isObjectRemoved = true;
+            	machine.erase(this);
             }
             
             //Refresh the hole
