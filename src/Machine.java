@@ -148,4 +148,16 @@ public class Machine
     {
     	return isMachineRunning;
     }
+    
+    /**
+     * Draw score method
+     * @param Text
+     * @param X-Postion
+     * @param Y-Postion
+     */
+    public void drawString(int myScore, int xPos, int yPos)
+    {
+    	String currenScore =Integer.toString(myScore);
+    	machine.drawString(currenScore, xPos, yPos);
+    }
 }

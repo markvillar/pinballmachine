@@ -188,6 +188,9 @@ public class PinballObject extends BallObject
             	machine.erase(this);
             }
             
+            //Draw live score on Pinballs
+            machine.drawString(myScore, currentXLocation, currentYLocation);
+            
             //Refresh the hole
             pinball.reDraw();
         }
