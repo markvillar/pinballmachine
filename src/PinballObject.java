@@ -224,7 +224,8 @@ public class PinballObject extends BallObject
             	this.isObjectRemoved = true;
             	machine.erase(this);
             }
-            else if (distanceFromHole < (radius + pinball.getRadius()))
+            //Pinball collides with hole
+            else if (distanceFromHole < (radius + pinball.getRadius()) && (radius <= pinball.getRadius()))
             {
             	myScore = 0;
             }
