@@ -36,7 +36,7 @@ public class Demo
         BallObject bumper1 = new BallObject(170, 220, Color.LIGHT_GRAY, 15, machine, bumperObjects);
         BallObject bumper2 = new BallObject(520, 460, Color.LIGHT_GRAY, 15, machine, bumperObjects);
         
-        BallObject largeHole = new BallObject(470, 230, Color.BLACK, 45, machine, holeObjects);
+        BallObject largeHole = new BallObject(470, 230, Color.BLACK, 70, machine, holeObjects);
         BallObject smallHole = new BallObject(60, 60, Color.BLACK, 15, machine, holeObjects);
         
         FlashPinball flashPinball1 = new FlashPinball(140, 400, -5, 3, Color.RED, 45, machine, bumperObjects, holeObjects, pinballObjects);
