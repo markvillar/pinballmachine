@@ -128,8 +128,12 @@ public class Demo
             // Check if pinballObjects ArrayList still have objects simulating
             if (pinballObjects.isEmpty())
             {
-            	//Stops the machine
+            	//Stops the machine 
             	machine.setMachineStatus(false);
+            	
+            	//Show accumulated score
+            	machine.drawString(machine.getTotalScore(), 320, 250);
+            	machine.drawString("Total Score: ", 240, 250);
             }
         }
     }

@@ -16,6 +16,7 @@ public class Machine
     private int lengthToGap;        // the distance between the edge of the machine and the start of the gap
     private int gapWidth = 50;
     private boolean isMachineRunning;
+    public static int totalScore;
 
     /**
      * Create a machine with default name and size
@@ -168,6 +169,23 @@ public class Machine
     }
     
     /**
+     * Sets new total score
+     */
+    public void addTotalScore(int newValue)
+    {
+    	totalScore = totalScore + newValue;
+    }
+    
+    /**
+     * Returns total score
+     * @return
+     */
+    public int getTotalScore()
+    {
+    	return totalScore;
+    }
+    
+    /**
      * Draw score method
      * @param Text
      * @param X-Postion
@@ -178,4 +196,16 @@ public class Machine
     	String currenScore =Integer.toString(myScore);
     	machine.drawString(currenScore, xPos, yPos);
     }
+    
+    /**
+     * Draw final score method
+     * @param text
+     * @param xPos
+     * @param yPos
+     */
+    public void drawString(String text, int xPos, int yPos)
+    {
+    	machine.drawString(text, xPos, yPos);
+    }
+    
 }
