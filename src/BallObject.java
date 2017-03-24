@@ -2,7 +2,7 @@ import java.awt.*;
 import java.util.*;
 
 /**
- * Write a description of class BallObject here.
+ * BallObject contains shared properties of all pinballs, holes and bumpers.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -30,7 +30,7 @@ public class BallObject
     }
     
     /**
-     * Generic ballObject with ArrayList argument
+     * Generic ballObject with BallObject Type ArrayList argument
      */
     public BallObject(int xPos, int yPos, Color objectColor, int objectRadius, Machine theMachine, ArrayList<BallObject> ballObjects)
     {
