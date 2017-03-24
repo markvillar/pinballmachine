@@ -144,7 +144,7 @@ public class PinballObject extends BallObject
     {
         for(PinballObject other : ((ArrayList<PinballObject>)pinballObjects))
         {   
-            //Check if pinball collides to itself
+            //Prevent Pinball from colliding on itself
             if ((currentXLocation != other.getXPosition()) && (currentYLocation != other.getYPosition()))
             {
                 int diffX = currentXLocation - other.getXPosition();
