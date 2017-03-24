@@ -106,14 +106,7 @@ public class PinballObject extends BallObject
         		{
         			System.out.println("Bounce Back!");
         			speedYTravel = -speedYTravel;
-        			
-            		//Refresh the machine
-            		machine.drawMachine();
         		}
-        		
-        		//Refresh the machine
-        		machine.drawMachine();
-        		
         	}
         	
         	//Hits the bottom wall - Bounce back up!
@@ -123,6 +116,9 @@ public class PinballObject extends BallObject
                 speedYTravel = -speedYTravel;
                 myScore = myScore + 1;
         	}
+        	
+    		//Refresh the machine
+    		machine.drawMachine();
         }
         
         // draw again at new position
