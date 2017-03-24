@@ -113,9 +113,22 @@ public class Machine
         return bottomEdge - 10;
     }
     
+    /**
+     * Get the distance between the edge of the machine and the start of the gap
+     * @return int
+     */
     public int getLengthToGap()
     {
     	return lengthToGap;
+    }
+    
+    /**
+     * Get the gap width between the bottom wall
+     * @return int
+     */
+    public int getGapWidth()
+    {
+    	return gapWidth;
     }
     
     /**
