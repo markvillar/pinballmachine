@@ -99,7 +99,21 @@ public class PinballObject extends BallObject
         	//Go through the Gap
         	if (currentXLocation >= lengthToGap && currentXLocation < (lengthToGap + gapWidth))
         	{
-        		System.out.println("Gap!");
+        		// Pinball falls between the gap
+        		
+        		// Hits the wall - (Pinball has to go back up)
+        		if (currentXLocation != (radius + lengthToGap))
+        		{
+        			System.out.println("Bounce Back!");
+        			speedYTravel = -speedYTravel;
+        			
+            		//Refresh the machine
+            		machine.drawMachine();
+        		}
+        		
+        		//Refresh the machine
+        		machine.drawMachine();
+        		
         	}
         	
         	//Hits the bottom wall - Bounce back up!
