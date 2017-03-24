@@ -101,12 +101,6 @@ public class PinballObject extends BallObject
         	{
         		// Pinball falls between the gap
         		
-        		// Hits the wall - (Pinball has to go back up)
-        		if (currentXLocation != (radius + lengthToGap))
-        		{
-        			System.out.println("Bounce Back!");
-        			speedYTravel = -speedYTravel;
-        		}
         	}
         	
         	//Hits the bottom wall - Bounce back up!
