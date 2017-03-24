@@ -113,6 +113,11 @@ public class Machine
         return bottomEdge - 10;
     }
     
+    public int getLengthToGap()
+    {
+    	return lengthToGap;
+    }
+    
     /**
      * Introduces a small delay in ball movement, for smooth running
      */
