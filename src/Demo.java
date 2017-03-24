@@ -34,17 +34,17 @@ public class Demo
         machine.resetMachine();
         
         BallObject bumper1 = new BallObject(170, 220, Color.LIGHT_GRAY, 15, machine, bumperObjects);
-        BallObject bumper2 = new BallObject(520, 460, Color.LIGHT_GRAY, 15, machine, bumperObjects);
+        BallObject bumper2 = new BallObject(420, 460, Color.LIGHT_GRAY, 15, machine, bumperObjects);
         
-        BallObject largeHole = new BallObject(470, 230, Color.BLACK, 50, machine, holeObjects);
+        BallObject largeHole = new BallObject(450, 230, Color.BLACK, 70, machine, holeObjects);
         BallObject smallHole = new BallObject(60, 60, Color.BLACK, 30, machine, holeObjects);
         
         FlashPinball flashPinball1 = new FlashPinball(400, 100, -5, 5, Color.RED, 40, machine, bumperObjects, holeObjects, pinballObjects);
-        FlashPinball flashPinball2 = new FlashPinball(100, 200, 5, 5, Color.RED, 30, machine, bumperObjects, holeObjects, pinballObjects);
-        FlashPinball flashPinball3 = new FlashPinball(300, 200, -5, 5, Color.RED, 20, machine, bumperObjects, holeObjects, pinballObjects);
+        FlashPinball flashPinball2 = new FlashPinball(100, 200, 5, 4, Color.RED, 30, machine, bumperObjects, holeObjects, pinballObjects);
+        FlashPinball flashPinball3 = new FlashPinball(300, 200, -5, 2, Color.RED, 20, machine, bumperObjects, holeObjects, pinballObjects);
         
-        SizablePinball sizeablePinball1 = new SizablePinball(500, 150, 5, -7, Color.CYAN, 20, machine, pinballObjects);
-        SizablePinball sizeablePinball2 = new SizablePinball(450, 250, -5, 5, Color.MAGENTA, 20, machine, pinballObjects);
+        SizablePinball sizeablePinball1 = new SizablePinball(200, 450, 7, -7, Color.CYAN, 20, machine, pinballObjects);
+        SizablePinball sizeablePinball2 = new SizablePinball(150, 130, 5, 2, Color.MAGENTA, 35, machine, pinballObjects);
         SizablePinball sizeablePinball3 = new SizablePinball(300, 400, 8, -8, Color.YELLOW, 20, machine, pinballObjects);
         
         while (machine.getMachineStatus() == true)
