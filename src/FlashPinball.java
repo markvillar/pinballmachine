@@ -11,7 +11,7 @@ public class FlashPinball extends PinballObject {
 	{
 		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, pinballObjects);
 		
-		isFlashing = true;
+		isFlashing = false;
 	}
 	
 	//Move the flashballObject around the machine
@@ -24,24 +24,28 @@ public class FlashPinball extends PinballObject {
        // check if it has hit the left Wall
        if(currentXLocation <= (leftWallPosition + radius))
        {
+    	   this.isFlashing = false;
     	   this.changeColour(colour);
        }
        
        // check if it has hit the right Wall
        if(currentXLocation >= (rightWallPosition - radius))
        {
+    	   this.isFlashing = false;
     	   this.changeColour(colour);
        }
        
        //check if it has hit the top Wall
        if(currentYLocation <= (topWallPosition + radius))
        {
+    	   this.isFlashing = false;
     	   this.changeColour(colour);
        }
        
        // check if it has hit the bottom Wall
        if(currentYLocation >= (bottomWallPosition - radius))
        {
+    	   this.isFlashing = false;
     	   this.changeColour(colour);
        }
        
@@ -56,23 +60,38 @@ public class FlashPinball extends PinballObject {
 		super.collisionCheck(bumperObjects, holeObjects, pinballObjects);
 		
 		//Check if flashballObject colliding to itself
-        if ((currentXLocation != this.getXPosition()) && (currentYLocation != this.getYPosition()))
+		
+		for(PinballObject other : ((ArrayList<PinballObject>)pinballObjects))
         {
-			//Toggle Flash
-			this.toggleFlash(isFlashing);
-			colour = Color.BLUE;
+	        if ((currentXLocation != other.getXPosition()) && (currentYLocation != other.getYPosition()))
+	        {
+                int diffX = currentXLocation - other.getXPosition();
+                int diffY = currentYLocation - other.getYPosition();
+                
+                int squaredX = (int) Math.pow(diffX, 2);
+                int squaredY = (int) Math.pow(diffY, 2);
+                
+                int distance = (int) Math.sqrt(squaredX + squaredY);
+                
+                if (isFlashing == true)
+                {
+                	this.changeColour(colour);
+                	this.changeColour(colour);
+                	this.changeColour(colour);
+                	this.changeColour(colour);
+                }
+                
+                //Pinball Collision
+                if (distance < (radius + other.getRadius()))
+                {
+                	isFlashing = true;
+                }
+                else
+                {
+                	continue;
+                }
+	        }
         }
-	}
-	
-	//Toggle flash method
-	public void toggleFlash(boolean isFlashing)
-	{
-		if (isFlashing == true){
-			isFlashing = false;
-		}
-		else if (isFlashing == false){
-			isFlashing = true;
-		}
 	}
 	
 	//Change the colour
