@@ -15,6 +15,7 @@ public class Machine
     private int rightEdge;
     private int lengthToGap;        // the distance between the edge of the machine and the start of the gap
     private int gapWidth = 50;
+    private boolean isMachineRunning;
 
     /**
      * Create a machine with default name and size
@@ -26,6 +27,7 @@ public class Machine
         bottomEdge = 500;
         lengthToGap = (rightEdge / 2) - gapWidth;
         drawMachine();
+        isMachineRunning = true;
     }
     
     /**
@@ -127,5 +129,23 @@ public class Machine
     {
         machine.erase();
         drawMachine();
+    }
+    
+    /**
+     * Sets the machine's status
+     * @param newStatus
+     */
+    public void setMachineStatus(boolean newStatus)
+    {
+    	isMachineRunning = newStatus;
+    }
+    
+    /**
+     * Gets the machine's current status
+     * @return
+     */
+    public boolean getMachineStatus()
+    {
+    	return isMachineRunning;
     }
 }

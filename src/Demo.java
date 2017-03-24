@@ -47,7 +47,7 @@ public class Demo
         SizablePinball sizeablePinball2 = new SizablePinball(450, 125, -1, -1, Color.MAGENTA, 40, machine, pinballObjects);
         SizablePinball sizeablePinball3 = new SizablePinball(100, 200, 2, -2, Color.YELLOW, 25, machine, pinballObjects);
         
-        for(int i = 0; i <= 4000; i++)
+        while (machine.getMachineStatus() == true)
         {
             machine.pauseMachine();		// small delay
             flashPinball1.move();
@@ -67,6 +67,11 @@ public class Demo
             
             sizeablePinball3.move();
             sizeablePinball3.collisionCheck(bumperObjects, holeObjects, pinballObjects);
+            
+            if (pinballObjects.isEmpty())
+            {
+            	machine.setMachineStatus(false);
+            }
         }
     }
 }
