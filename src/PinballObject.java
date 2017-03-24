@@ -224,6 +224,10 @@ public class PinballObject extends BallObject
             	this.isObjectRemoved = true;
             	machine.erase(this);
             }
+            else if (distanceFromHole < (radius + pinball.getRadius()))
+            {
+            	myScore = 0;
+            }
             
             //Draw live score on Pinballs
             machine.drawString(myScore, currentXLocation, currentYLocation);
