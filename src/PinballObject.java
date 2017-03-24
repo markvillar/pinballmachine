@@ -97,7 +97,7 @@ public class PinballObject extends BallObject
         if(currentYLocation >= (bottomWallPosition - radius))
         {
         	//Go through the Gap
-        	if (currentXLocation >= lengthToGap && currentXLocation < (lengthToGap + gapWidth))
+        	if ((currentXLocation >= (lengthToGap + radius)) && (currentXLocation <= ((lengthToGap + (gapWidth * 2)) + radius)))
         	{
         		// Pinball falls between the gap
         		
