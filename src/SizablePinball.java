@@ -15,7 +15,7 @@ public class SizablePinball extends PinballObject {
 	private final int maxRadius;
 	private final int minRadius;
 	
-	//Constructor
+	//Sizable Pinball Constructor
 	public SizablePinball(int xPos, int yPos, int xVel, int yVel, Color objectColor, int objectRadius,
 			Machine theMachine, ArrayList<PinballObject> pinballObjects) {
 		super(xPos, yPos, xVel, yVel, objectColor, objectRadius, theMachine, pinballObjects);
