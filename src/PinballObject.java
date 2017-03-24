@@ -25,6 +25,7 @@ public class PinballObject extends BallObject
     protected final int rightWallPosition;
     protected final int topWallPosition;
     protected final int bottomWallPosition;
+    protected int myScore;
     protected boolean isObjectRemoved;
 
     /**
@@ -47,6 +48,7 @@ public class PinballObject extends BallObject
         rightWallPosition = machine.getRightWall();
         topWallPosition = machine.getToptWall();
         bottomWallPosition = machine.getBottomWall();
+        myScore = 0;
         isObjectRemoved = false;
         pinballObjects.add(this);
     }
@@ -68,6 +70,7 @@ public class PinballObject extends BallObject
         {
             currentXLocation = leftWallPosition + radius;
             speedXTravel = -speedXTravel;
+            myScore = myScore + 1;
         }
 
         // check if it has hit the righttwall
@@ -75,6 +78,7 @@ public class PinballObject extends BallObject
         {
             currentXLocation = rightWallPosition - radius;
             speedXTravel = -speedXTravel;
+            myScore = myScore + 1;
         }
 
         //check if it has hit the top Wall
@@ -82,6 +86,7 @@ public class PinballObject extends BallObject
         {
             currentYLocation = topWallPosition + radius;
             speedYTravel = -speedYTravel;
+            myScore = myScore + 1;
         }
 
         // check if it has hit the bottom Wall
@@ -89,8 +94,9 @@ public class PinballObject extends BallObject
         {
             currentYLocation = bottomWallPosition - radius;
             speedYTravel = -speedYTravel;
+            myScore = myScore + 1;
         }
-
+        
         // draw again at new position
         machine.draw(this);
 
@@ -144,6 +150,8 @@ public class PinballObject extends BallObject
                     
                     speedYTravel = y2;
                     other.setSpeedY(y);
+                    
+                    myScore = myScore + 5;
                 }
             }
         }
@@ -164,6 +172,9 @@ public class PinballObject extends BallObject
             {
             	speedXTravel = -speedXTravel;
             	speedYTravel = -speedYTravel;
+            	
+            	//Add 2 points
+            	myScore = myScore + 2;
             }
             
             //Refresh the bumper
